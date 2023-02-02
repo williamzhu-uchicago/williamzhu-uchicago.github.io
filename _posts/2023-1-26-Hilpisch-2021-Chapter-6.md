@@ -106,6 +106,7 @@ bb = BacktestBase(symbol="AAPL.O", start="2010-1-1", end="2019-12-31", amount=10
 bb.plot_data()
 ```
 
+![AAPL Stock](/assets/pictures/Hilpisch_2021_Chapter_6_0.png)
 
 ```python
 class BacktestBase(BacktestBase): #Part of functionality 3
