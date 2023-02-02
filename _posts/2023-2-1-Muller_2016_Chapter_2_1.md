@@ -1,5 +1,10 @@
-### Andreas Muller & Sarah Guido - Introduction to Machine Learning with Python
-# Chapter 2.1 Supervised Learning with k-NN Algorithm
+---
+layout: post
+title: Andreas Muller & Sarah Guido - Introduction to Machine Learning with Python - Chapter 2.1
+---
+ 
+# Supervised Learning with k-NN Algorithm
+
 **Supervised Learning** is used when we want to predict a certain outcome from a given input, and we already have examples of input-output pairs. The goal here is to make accurate predictions for new data as inputs.
 
 There are two types of supervised ML problems:
