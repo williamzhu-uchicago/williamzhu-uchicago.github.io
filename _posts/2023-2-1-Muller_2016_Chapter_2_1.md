@@ -50,7 +50,7 @@ axes[1].set_ylabel("Target")
 
 
     
-![png](Muller_2016_Chapter_2_1_files/Muller_2016_Chapter_2_1_2_1.png)
+![Datasets Showcase](/assets/pictures/Muller_2016_Chapter_2_1_1.png)
     
 
 
@@ -65,7 +65,7 @@ mglearn.plots.plot_knn_classification(n_neighbors=3)
 
 
     
-![png](Muller_2016_Chapter_2_1_files/Muller_2016_Chapter_2_1_4_0.png)
+![kNN Algorithm](/assets/pictures/Muller_2016_Chapter_2_1_2.png)
     
 
 
@@ -110,7 +110,7 @@ axes[0].legend(loc=3)
 
 
     
-![png](Muller_2016_Chapter_2_1_files/Muller_2016_Chapter_2_1_7_1.png)
+![decision boundary](/assets/pictures/Muller_2016_Chapter_2_1_3.png)
     
 
 
@@ -124,7 +124,7 @@ mglearn.plots.plot_knn_regression(n_neighbors=3)
 
 
     
-![png](Muller_2016_Chapter_2_1_files/Muller_2016_Chapter_2_1_9_0.png)
+![knn Regression Showcase](/assets/pictures/Muller_2016_Chapter_2_1_4.png)
     
 
 
@@ -175,7 +175,7 @@ axes[0].legend(["Model predictions", "Training data", "Test data"])
 
 
     
-![png](Muller_2016_Chapter_2_1_files/Muller_2016_Chapter_2_1_12_1.png)
+![kNN Regression Prediction](/assets/pictures/Muller_2016_Chapter_2_1_5.png)
     
 
 
