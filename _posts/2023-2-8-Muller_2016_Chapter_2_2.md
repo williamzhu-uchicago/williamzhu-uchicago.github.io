@@ -6,10 +6,10 @@ title: Andreas Muller & Sarah Guido - Introduction to Machine Learning with Pyth
 # Chapter 2.2 Supervised Learning with Linear Models
 
 **Linear models** make prediction using a linear function of the input features. The model looks as follows:
-$$
+\[
 \hat{y} = \beta + w_0x_0 + w_1x_1 + ... + x_{p-1}x_{p-1}
-$$
-where $x_i$ denotes the i-th featue of a single data point, $w_i$ and $\beta$ are parameters of the model, and $\hat{y}$ is the prediction made. For a model with only 1 feature, the equation is reduced into a simple equation of line. To illustrate how the model works, we will use the same datasets as before and plot a graph with linear model in effect. Notice the slope of line is ~0.4, which is what *w[0]* is, and the y-intercept is ~0, which is what *b* is.
+\]
+where \(x_i\) denotes the i-th featue of a single data point, \(w_i\) and \(\beta\) are parameters of the model, and \(\hat{y}\) is the prediction made. For a model with only 1 feature, the equation is reduced into a simple equation of line. To illustrate how the model works, we will use the same datasets as before and plot a graph with linear model in effect. Notice the slope of line is ~0.4, which is what *w[0]* is, and the y-intercept is ~0, which is what *b* is.
 
 
 ```python
@@ -34,7 +34,7 @@ mglearn.plots.plot_linear_regression_wave()
 
 ## Linear Regression
 
-**Linear regression**, a.k.a. ordinary least squares (OLS), finds coefficients *w* and *b* that minimize the mean squared error, $\frac{1}{n}\sum_{i=1}^{n}(Y_i-\hat{Y_i})^2$, between predictions and the actual targets, *y*. Linear regression models has no parameters, so we cannot adjust model complexity. Coincidentally, I just learned the hardcore maths behind the model 2 hours before I was writing this note, it amazes me how much is abstrated away from us when using sklearn. When scoring the accuracy of the model, $R^2$ is used. With higher-dimensional datasets, linear models are more powerful but are also more likely to overfit.
+**Linear regression**, a.k.a. ordinary least squares (OLS), finds coefficients *w* and *b* that minimize the mean squared error, \(\frac{1}{n}\sum_{i=1}^{n}(Y_i-\hat{Y_i})^2\), between predictions and the actual targets, *y*. Linear regression models has no parameters, so we cannot adjust model complexity. Coincidentally, I just learned the hardcore maths behind the model 2 hours before I was writing this note, it amazes me how much is abstrated away from us when using sklearn. When scoring the accuracy of the model, \(R^2\) is used. With higher-dimensional datasets, linear models are more powerful but are also more likely to overfit.
 
 
 
@@ -133,9 +133,9 @@ print("Features used:", np.sum(lasso.coef_ != 0), "out of 105")
 
 Linear models can also be used in classification problems using the following formula:
 
-$$
+\[
 \hat{y} = \beta + w_0x_0 + w_1x_1 + ... + x_{p-1}x_{p-1} > 0
-$$
+\]
 
 If the prediction is smaller than 0, we classify it as *-1*, otherwise we classify it as *+1*. Notice that the *decision boundary* is a linear function of the input (i.e., the model separates two classes using the line given by the equation).
 
@@ -169,7 +169,7 @@ axes[0].legend()
 
 ## Linear Models for Multiclass Classification
 
-One technique to extend a binary classification algorithm to a multiclass classification algorithm is the *one-vs-rest* approach. In it, for each class of the n classes, a binary model is learned and tries to separate that class from the all other classes. This way, we will obtain n many binary models. To make a prediction, all models are applied on the same point, and the model (i.e. the forumula) that yields the highest $\hat{y}$ wins. Note that having one binary classifier per class implies having a vector of coefficients (*w*) and an intercept (*b*).
+One technique to extend a binary classification algorithm to a multiclass classification algorithm is the *one-vs-rest* approach. In it, for each class of the n classes, a binary model is learned and tries to separate that class from the all other classes. This way, we will obtain n many binary models. To make a prediction, all models are applied on the same point, and the model (i.e. the forumula) that yields the highest \(\hat{y}\) wins. Note that having one binary classifier per class implies having a vector of coefficients (*w*) and an intercept (*b*).
 
 The following demonstrates the approach. Note that after fitting the model, coefficient is a 3-by-2 matrix since we have 3 classes and 2 features, and intercept is a 3-by-1 vector since we have 3 classes. In the figure, notice that the points of a class are separated from the rest of the points by their respective decision boundry line. Moreover, if test points are located at the center triangle, they are classified into the class of the closest line. 
 
