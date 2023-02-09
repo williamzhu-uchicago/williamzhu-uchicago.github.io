@@ -11,7 +11,7 @@ $$
 \hat{y} = \beta + w_0x_0 + w_1x_1 + ... + x_{p-1}x_{p-1}
 $$
 
-where $x_i$ denotes the i-th featue of a single data point, $w_i$ and $\beta$ are parameters of the model, and $\hat{y}$ is the prediction made. For a model with only 1 feature, the equation is reduced into a simple equation of line. To illustrate how the model works, we will use the same datasets as before and plot a graph with linear model in effect. Notice the slope of line is ~0.4, which is what *w[0]* is, and the y-intercept is ~0, which is what *b* is.
+where $$x_i$$ denotes the i-th featue of a single data point, $ w_i $ and $\beta$ are parameters of the model, and $\hat{y}$ is the prediction made. For a model with only 1 feature, the equation is reduced into a simple equation of line. To illustrate how the model works, we will use the same datasets as before and plot a graph with linear model in effect. Notice the slope of line is ~0.4, which is what *w[0]* is, and the y-intercept is ~0, which is what *b* is.
 
 
 ```python
