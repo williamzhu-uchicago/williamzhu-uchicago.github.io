@@ -1,4 +1,7 @@
-# Quantitatively Accessing Jim Cramer's Picks
+---
+layout: post
+title: Quantitatively Accessing Jim Cramer's Picks
+---
 
 When you wander around finance forums long enough, you must have heard of the Inverse Cramer strategy. Jim Cramer was an investment specialist before joining the CNBC and got his own show, *Mad Money*.
 
@@ -218,9 +221,10 @@ We already have a few interesting observations:
 
 I am particularly interested in point number 2. I want to take one step further and rigorosly find if there is a statistical significance between the mean of Jim Cramer's recommendation returns and the benchmark returns. Well, one simple way to achieve this is through comparing between two means and computing a t-statistic.
 
-Consider the 1-day change case. Let $X_1, ..., X_n$ be the random variable recording the 1-day price change following Jim Cramer's recommendations, and let $Y_1, ..., Y_m$ be the random variable recording the 1-day price change buying directly the SPY index fund. Here, I assume the random variables are independent of each other. Note that the independence assumption is for the 1-day change case or even the 1-week change case is valid but may not be true if we expand our horizon to 1 month or 1 year (since they present a lot of overlaps for variables $Y_i$). We need not to know the distribution of these random variables, since we can apply the law of large numbers and t-statistics regardless of whether they are normal or not.
+Consider the 1-day change case. Let $$X_1, ..., X_n$$ be the random variable recording the 1-day price change following Jim Cramer's recommendations, and let $$Y_1, ..., Y_m$$ be the random variable recording the 1-day price change buying directly the SPY index fund. Here, I assume the random variables are independent of each other. Note that the independence assumption is for the 1-day change case or even the 1-week change case is valid but may not be true if we expand our horizon to 1 month or 1 year (since they present a lot of overlaps for variables $$Y_i$$). We need not to know the distribution of these random variables, since we can apply the law of large numbers and t-statistics regardless of whether they are normal or not.
 
-Suppose the true mean return of $X_i's$ is $\mu$ and the true mean return of $Y_i's$ is $\theta$. Then my hypothesis is the following:
+Suppose the true mean return of $$X_i's$$ is $$\mu$$ and the true mean return of $$Y_i's$$ is $$\theta$$. Then my hypothesis is the following:
+
 $$
 \left\{
 \begin{array}{ll}
@@ -231,11 +235,12 @@ $$
 $$ 
 
 With the help of my STAT 24510 Midterm, I can derive a rejection region:
+
 $$
 \bar{X} - \bar{Y} < \frac{t_{n+m-2, 1-\alpha}}{\sqrt{\frac{nm}{n+m}}}\sqrt{\frac{1}{n+m-2}[\sum_{i=1}^n(X_i-\bar{X})^2+\sum_{j=1}^m(Y_j-\bar{Y})^2]}
 $$
 
-Reference: http://www.stat.yale.edu/Courses/1997-98/101/meancomp.htm
+[Reference to t-distribution.](http://www.stat.yale.edu/Courses/1997-98/101/meancomp.htm)
 
 
 ```python
@@ -284,8 +289,8 @@ $$
 y = \beta_{0} + \beta_{1}x_{group} + \beta_{2}x_{post} + \beta_{3}(x_{group} \cdot x_{post}) + \epsilon
 $$
 
-where $x_{group}$ and $x_{post}$ are indicator variables, equating to 1 if the data point is in the treatment group and if the data point is observed post-treatment respectively. Effect of Jim Cramer's recommendation can thus be isolated and indicated only in $\beta_{3}$.
+where $$x_{group}$$ and $$x_{post}$$ are indicator variables, equating to 1 if the data point is in the treatment group and if the data point is observed post-treatment respectively. Effect of Jim Cramer's recommendation can thus be isolated and indicated only in $\beta_{3}$.
 
-Reference: https://timeseriesreasoning.com/contents/introduction-to-the-difference-in-differences-regression-model/
+[Reference to a DiD example.](https://timeseriesreasoning.com/contents/introduction-to-the-difference-in-differences-regression-model/)
 
-[TODO] *The actual experiment is yet to be done. One primary difficulty is identifying pairs of stock such that the parallel assumption can hold.*
+*TODO The actual experiment is yet to be done. One primary difficulty is identifying pairs of stock such that the parallel assumption can hold.*
